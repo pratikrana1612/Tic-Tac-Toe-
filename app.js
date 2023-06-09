@@ -39,24 +39,30 @@ const drawTheLine = (winningPair) => {
     line.classList.add("line_vertical");
     line.style.left = el.offsetLeft + 50 + "px";
     line.style.top = 0 + "px";
+  } else if (
+    possibleWins[6] === winningPair ||
+    possibleWins[7] === winningPair
+  ) {
+    line.classList.add("line_horizontal");
+    line.style.transform =
+      possibleWins[7] === winningPair ? "rotate(135deg)" : "rotate(225deg)";
   }
 };
 const WinnerChecker = function (Player) {
-
-    for (const array of possibleWins) {
-      if (
-        (sings[array[0]] === "⭕" || sings[array[1]] === "❌") &&
-        sings[array[0]] === sings[array[1]] &&
-        sings[array[1]] === sings[array[2]]
-      ) {
-        console.log(`${Player} is the winer`);
-        gameOver(Player);
-        drawTheLine(array);
-      }
+  for (const array of possibleWins) {
+    if (
+      (sings[array[0]] === "⭕" || sings[array[1]] === "❌") &&
+      sings[array[0]] === sings[array[1]] &&
+      sings[array[1]] === sings[array[2]]
+    ) {
+      console.log(`${Player} is the winer`);
+      gameOver(Player);
+      drawTheLine(array);
     }
-  if(!sings.includes(undefined)){
+  }
+  if (!sings.includes(undefined)) {
     console.log(`Game is Draw`);
-    gameOver('NO ONE');
+    gameOver("NO ONE");
   }
 };
 const ClickHandler = (event) => {

@@ -13,12 +13,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 #main_section {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   overflow: hidden;
   border: 1px solid white;
   box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.629);
@@ -48,10 +48,14 @@ body {
 }
 .line {
   background-color:white;
-  position: absolute;
+  /* position: absolute;
+  top:150px;
+  left:150px; */
   width: 5px;
+  position: absolute;
   height:5px;
   display: none;
+  /* animation: lineDrawHorizontal 3s linear ; */
 }
 .line_horizontal{
   animation: lineDrawHorizontal 3s linear;
