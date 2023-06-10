@@ -58,6 +58,8 @@ const WinnerChecker = function (Player) {
       console.log(`${Player} is the winer`);
       gameOver(Player);
       drawTheLine(array);
+      array.forEach(el => document.getElementById(el).style['backgroundColor']="rgba(144, 238, 144, 0.7)")
+      return 
     }
   }
   if (!sings.includes(undefined)) {
