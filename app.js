@@ -58,8 +58,12 @@ const WinnerChecker = function (Player) {
       console.log(`${Player} is the winer`);
       gameOver(Player);
       drawTheLine(array);
-      array.forEach(el => document.getElementById(el).style['backgroundColor']="rgba(144, 238, 144, 0.7)")
-      return 
+      array.forEach(
+        (el) =>
+          (document.getElementById(el).style["backgroundColor"] =
+            "rgba(144, 238, 144, 0.7)")
+      );
+      return;
     }
   }
   if (!sings.includes(undefined)) {
@@ -86,5 +90,17 @@ const ClickHandler = (event) => {
     console.log(sings);
   }
 };
-
+const cheter = (event) => {
+  if (event.key === "p") {
+    sings.forEach((sing, idx) => {
+      if (sing) {
+        document.getElementById(idx).textContent = sing === "⭕" ? "❌" : "⭕";
+      }
+    });
+    sings = sings.map((sing) => (sing && sing === "⭕" ? "❌" : "⭕"));
+    console.log("cheated");
+    // console.log(sings);
+  }
+};
 section.addEventListener("click", ClickHandler);
+document.body.addEventListener("keypress", cheter);
