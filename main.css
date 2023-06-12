@@ -67,6 +67,16 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
+.score h1{
+  display: inline-block;
+  text-align: center;
+  margin:2rem;
+}
+.score h1 span{
+  display: inline-block;
+  text-align: center;
+  margin-top:1rem;
+}
 @keyframes lineDrawHorizontal {
   0% {
     width:5px;
